@@ -7,5 +7,6 @@ curl -s -L -A Lynx "$arxiv_url" |
 tr -d '\n' | 
 tr ' ' '\n' | 
 grep -oP 'arXiv:[^<&?]+' |
-tr -d 'arXiv:' |
+# tr -d 'arXiv:' |
+sed 's/^arXiv://' |
 sort | uniq
